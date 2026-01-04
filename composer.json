@@ -1,6 +1,6 @@
 {
   "name": "iugmali/erede-php",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "e.Rede integration SDK",
   "minimum-stability": "stable",
   "license": "MIT",
