@@ -7,8 +7,8 @@ use stdClass;
 class Environment implements RedeSerializable
 {
     public const PRODUCTION = 'https://api.userede.com.br/erede';
-    public const SANDBOX = 'https://api.userede.com.br/desenvolvedores';
-    public const VERSION = 'v1';
+    public const SANDBOX = 'https://sandbox-erede.useredecloud.com.br';
+    public const VERSION = 'v2';
 
     /**
      * OAuth2 token endpoints
