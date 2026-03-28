@@ -27,7 +27,7 @@ Se já possui um arquivo `composer.json`, basta adicionar a seguinte dependênci
 ```json
 {
 "require": {
-    "developersrede/erede-php": "*"
+    "iugmali/erede-php": "*"
 }
 }
 
@@ -42,7 +42,7 @@ composer install
 Alternativamente, você pode executar diretamente em seu terminal:
 
 ```
-composer require "developersrede/erede-php"
+composer require "iugmali/erede-php"
 ```
 
 # Testes
@@ -64,7 +64,7 @@ fazer:
 docker build . -t erede-docker
 docker run -e REDE_PV='1234' -e REDE_TOKEN='5678' erede-docker
 ```
-````
+
 Caso necessário, o SDK possui a possibilidade de logs de depuração que podem ser utilizados ao executar os testes. Para isso, 
 basta exportar a variável de ambiente `REDE_DEBUG` com o valor 1:
 

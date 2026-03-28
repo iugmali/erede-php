@@ -6,7 +6,7 @@
   "license": "MIT",
   "type": "library",
   "require": {
-    "php": "^8.1",
+    "php": "^8.4",
     "ext-curl": "*",
     "ext-json": "*",
     "psr/log": "*",
@@ -32,6 +32,10 @@
     {
       "name": "Robson Soares",
       "email": "robson_drs@hotmail.com"
+    },
+    {
+      "name": "Guilherme Almeida",
+      "email": "dev@iugmali.com"
     }
   ]
 }

@@ -382,7 +382,7 @@ class Transaction implements RedeSerializable, RedeUnserializable
                 'additional' => $this->additional
             ],
             function ($value) {
-                return !is_null($value);
+                return !empty($value);
             }
         );
     }
@@ -1000,7 +1000,7 @@ class Transaction implements RedeSerializable, RedeUnserializable
                 'threeDSecure' => $this->unserializeThreeDSecure($property, $value),
                 'requestDateTime', 'dateTime', 'refundDateTime' => $this->unserializeRequestDateTime($property, $value),
                 'brand' => $this->unserializeBrand($property, $value),
-                default => $this->{$property} = $value,
+                default => $this->setPropertyIfExists($property, $value),
             };
         }
 
@@ -1148,5 +1148,22 @@ class Transaction implements RedeSerializable, RedeUnserializable
 
             $this->brand = $brand;
         }
+    }
+
+    /**
+     * Sets a property only if it is declared on this object.
+     * This avoids creating dynamic properties when parsing external JSON responses,
+     * which can be deprecated/removed in newer PHP versions.
+     *
+     * @param string $property
+     * @param mixed  $value
+     * @return void
+     */
+    private function setPropertyIfExists(string $property, mixed $value): void
+    {
+        if (property_exists($this, $property)) {
+            $this->{$property} = $value;
+        }
+        // Unknown properties are ignored to maintain strict model shape.
     }
 }

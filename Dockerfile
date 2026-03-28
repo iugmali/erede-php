@@ -1,5 +1,5 @@
-FROM php:8.1-cli
-LABEL maintainer="neto.joaobatista@gmail.com"
+FROM php:8.4-cli
+LABEL maintainer="dev@iugmali.com"
 
 RUN apt -y update && apt -y install libzip-dev
 RUN docker-php-ext-install zip
@@ -18,5 +18,6 @@ RUN echo "./vendor/bin/phpcs --ignore=vendor --standard=PSR12 src test\n">tests
 RUN echo "./vendor/bin/phpstan\n" >>tests
 RUN echo "./vendor/bin/phpcpd src tests\n" >>tests
 RUN echo "./vendor/bin/phpunit --testdox --colors='always' test" >>tests
+RUN echo "php ./test_oauth.php" >>tests
 
 CMD sh tests

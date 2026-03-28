@@ -59,7 +59,7 @@ class eRedeTest extends TestCase
         $transaction = new Transaction(20.99, $this->generateReferenceNumber())->creditCard(
             '5448280000000007',
             '123',
-            '01',
+            1,
             2035,
             'John Snow'
         )->capture(false);

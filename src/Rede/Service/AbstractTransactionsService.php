@@ -29,7 +29,7 @@ abstract class AbstractTransactionsService extends AbstractService
      * @param Transaction|null     $transaction
      * @param LoggerInterface|null $logger
      */
-    public function __construct(Store $store, Transaction $transaction = null, LoggerInterface $logger = null)
+    public function __construct(Store $store, ?Transaction $transaction = null, ?LoggerInterface $logger = null)
     {
         parent::__construct($store, $logger);
 

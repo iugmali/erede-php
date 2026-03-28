@@ -82,7 +82,7 @@ class ThreeDSecure implements RedeSerializable
         private readonly ?Device $Device = null,
         private string $onFailure = self::DECLINE_ON_FAILURE,
         string $mpi = ThreeDSecure::MPI_REDE,
-        string $userAgent = null
+        ?string $userAgent = null
     ) {
         if ($userAgent === null) {
             $userAgent = eRede::USER_AGENT;

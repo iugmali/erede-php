@@ -20,8 +20,8 @@ trait CreateTrait
         $objectKeys = get_object_vars($object);
 
         foreach ($dataKeys as $property => $value) {
-            if (array_key_exists($property, $objectKeys)) {
-                if ($property == 'requestDateTime' || $property == 'dateTime' || $property == 'refundDateTime') {
+            if (array_key_exists($property, $objectKeys) && property_exists($object, $property)) {
+                if ($property === 'requestDateTime' || $property === 'dateTime' || $property === 'refundDateTime') {
                     $value = new DateTime($value);
                 }
 
