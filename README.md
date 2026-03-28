@@ -18,7 +18,7 @@ Este SDK possui as seguintes funcionalidades:
 
 ## Dependências
 
-* PHP >= 8.1
+* PHP >= 8.4
 
 ## Instalando o SDK
 
@@ -48,28 +48,10 @@ composer require "iugmali/erede-php"
 # Testes
 
 O SDK utiliza PHPUnit com TestDox para os testes. Para executá-los em ambiente local, você precisa exportar
-as variáveis de ambiente `REDE_PV` e `REDE_TOKEN` com suas credenciais da API. Feito isso, basta rodar:
+as variáveis de ambiente `REDE_PV` e `REDE_TOKEN` com suas credenciais da API. Feito isso, basta copiar o conteúdo de `.env.example` para um arquivo `.env` e executar o comando:
 
 ```
-export REDE_PV=1234
-export REDE_TOKEN=5678
-
-./tests
-```
-
-Os testes também podem ser executados através de um container com a configuração ideal para o projeto. Para isso, basta
-fazer:
-
-```
-docker build . -t erede-docker
-docker run -e REDE_PV='1234' -e REDE_TOKEN='5678' erede-docker
-```
-
-Caso necessário, o SDK possui a possibilidade de logs de depuração que podem ser utilizados ao executar os testes. Para isso, 
-basta exportar a variável de ambiente `REDE_DEBUG` com o valor 1:
-
-```
-export REDE_DEBUG=1
+docker compose up --build
 ```
 
 # Utilizando
