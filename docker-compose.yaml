@@ -1,0 +1,8 @@
+services:
+  erede:
+    build: .
+    image: iugmali/eredesdk:latest
+    environment:
+      - REDE_PV=${REDE_PV:-}
+      - REDE_TOKEN=${REDE_TOKEN:-}
+      - REDE_DEBUG=${REDE_DEBUG:-1}
