@@ -56,11 +56,11 @@ class eRedeTest extends TestCase
 
     public function testShouldAuthorizeACreditcardTransaction(): void
     {
-        $transaction = (new Transaction(20.99, $this->generateReferenceNumber()))->creditCard(
+        $transaction = new Transaction(20.99, $this->generateReferenceNumber())->creditCard(
             '5448280000000007',
-            '235',
-            '12',
-            (int)date('Y') + 1,
+            '123',
+            '01',
+            2035,
             'John Snow'
         )->capture(false);
 
@@ -73,7 +73,7 @@ class eRedeTest extends TestCase
     {
         $transaction = (new Transaction(20.99, $this->generateReferenceNumber()))->creditCard(
             '5448280000000007',
-            '235',
+            '123',
             '12',
             (int)date('Y') + 1,
             'John Snow'
@@ -88,7 +88,7 @@ class eRedeTest extends TestCase
     {
         $transaction = (new Transaction(20.99, $this->generateReferenceNumber()))->creditCard(
             '5448280000000007',
-            '235',
+            '123',
             '12',
             (int)date('Y') + 1,
             'John Snow'
@@ -103,7 +103,7 @@ class eRedeTest extends TestCase
     {
         $transaction = (new Transaction(20.99, $this->generateReferenceNumber()))->creditCard(
             '5448280000000007',
-            '235',
+            '123',
             '12',
             (int)date('Y') + 1,
             'John Snow'
@@ -118,7 +118,7 @@ class eRedeTest extends TestCase
     {
         $transaction = (new Transaction(20.99, $this->generateReferenceNumber()))->creditCard(
             '5448280000000007',
-            '235',
+            '123',
             '12',
             (int)date('Y') + 1,
             'John Snow'
@@ -136,7 +136,7 @@ class eRedeTest extends TestCase
     {
         $transaction = (new Transaction(20.99, $this->generateReferenceNumber()))->creditCard(
             '5448280000000007',
-            '235',
+            '123',
             '12',
             (int)date('Y') + 1,
             'John Snow'
@@ -162,7 +162,7 @@ class eRedeTest extends TestCase
     {
         $transaction = (new Transaction(20.99, $this->generateReferenceNumber()))->creditCard(
             '5448280000000007',
-            '235',
+            '123',
             '12',
             (int)date('Y') + 1,
             'John Snow'
@@ -177,7 +177,7 @@ class eRedeTest extends TestCase
     {
         $transaction = (new Transaction(0, $this->generateReferenceNumber()))->creditCard(
             '5448280000000007',
-            '235',
+            '123',
             '12',
             (int)date('Y') + 1,
             'John Snow'
@@ -232,7 +232,7 @@ class eRedeTest extends TestCase
         $authorizedTransaction = $this->createERede()->create(
             (new Transaction(20.99, $this->generateReferenceNumber()))->creditCard(
                 '5448280000000007',
-                '235',
+                '123',
                 '12',
                 (int)date('Y') + 1,
                 'John Snow'
@@ -325,7 +325,7 @@ class eRedeTest extends TestCase
         return $this->createERede()->create(
             (new Transaction(20.99, $this->generateReferenceNumber()))->creditCard(
                 '5448280000000007',
-                '235',
+                '123',
                 12,
                 (int)date('Y') + 1,
                 'John Snow'
